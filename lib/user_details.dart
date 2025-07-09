@@ -51,7 +51,7 @@ class UserDetails extends StatelessWidget {
             //   height: 1,
             //   color: Colors.black,
             // )
-            SizedBox(height: 30,),
+            SizedBox(height: 5,),
             ListTile(
               leading: Icon(Icons.person),
               title: Text('@${user.username}'),
@@ -72,7 +72,54 @@ class UserDetails extends StatelessWidget {
               title: Text(user.website!),
               trailing: Icon(Icons.arrow_forward_ios),
             ),
+            
+             
+                
+                ListTile(
+              leading: Icon(Icons.home_filled),
+              title: RichText(text: TextSpan(
+                style: TextStyle(color: const Color.fromARGB(255, 35, 35, 35)),
+                children: [
+              TextSpan(text: 'Company Address: \n ', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+              TextSpan( text: user.company!.name.toString(), style: TextStyle(fontStyle: FontStyle.italic))
+              ])),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(user.company!.catchPhrase.toString(), style: TextStyle(fontStyle: FontStyle.italic)),
+                  Text(user.company!.bs.toString(), style: TextStyle(fontStyle: FontStyle.italic))
 
+                ],
+              ),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+
+             ListTile(
+              leading: Icon(Icons.location_on),
+              title: RichText(text: TextSpan(
+                style: TextStyle(color: const Color.fromARGB(255, 51, 50, 50)),
+                children: [
+                  TextSpan(text: 'Address: \n', style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold)),
+                  TextSpan(text: 'Street: ${user.address!.street.toString()}', style: TextStyle(fontStyle: FontStyle.italic))
+                ]
+              )),
+              subtitle: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text('suit: ${user.address!.suite.toString()}',  style: TextStyle(fontStyle: FontStyle.italic)),
+                  Text('City:${user.address!.city.toString()}', style: TextStyle(fontStyle: FontStyle.italic)),
+                  Text('ZipCode: ${user.address!.zipcode.toString()}', style: TextStyle(fontStyle: FontStyle.italic)),
+                  Text('Lat: ${user.address!.geo!.lat.toString()}', style: TextStyle(fontStyle: FontStyle.italic)),
+                  Text('Lng: ${user.address!.geo!.lng.toString()}', style: TextStyle(fontStyle: FontStyle.italic)),
+                 
+                   
+
+                ],
+              ),
+              trailing: Icon(Icons.arrow_forward_ios),
+            ),
+           
+           
           ],
         ),
       ),

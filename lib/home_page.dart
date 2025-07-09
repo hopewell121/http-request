@@ -61,35 +61,7 @@ class _HomePageState extends State<HomePage> {
           )
         ],
       ),
-      // body: FutureBuilder(
-      //         future: userDataList, 
-      //         builder: (context, snapshot){
-      //         if(snapshot.hasData){
-      // final List<UserModel> users = snapshot.data!;
-      // return ListView.builder(
-      //   itemCount: users.length,
-      //   itemBuilder: (context, index){
-      //     final user = users[index];
-      //     return Padding(
-      //       padding: const EdgeInsets.all(12),
-      //       child: Column(
-      //         crossAxisAlignment: CrossAxisAlignment.start,
-      //         children: [
-      //           CircleAvatar(),
-      //           Text(user.name!),
-      //           Text(user.username!),
-      //         ],
-      //       ),
-      //     );
-          
-      //   },
-      //   );
-      //         }
-      //         return ListTile(
-              
-      //         );
-      //       })
-
+      
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 15),
         child: Column(
@@ -161,7 +133,7 @@ class _HomePageState extends State<HomePage> {
                 
                 backgroundImage: AssetImage('images/boy.png'),
               ),
-              title: Text(user.name!),
+              title: Text(user.name.toString()),
               subtitle: Text('@${user.username}', style: TextStyle(),),
               trailing: Text('16:20'),
               onTap: () {
